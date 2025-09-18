@@ -61,3 +61,21 @@ function toggleTheme() {
     localStorage.theme = "light";
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const showMoreBtn = document.getElementById("show-more-btn");
+  const moreProjects = document.getElementById("more-projects");
+
+  if (showMoreBtn && moreProjects) {
+    showMoreBtn.addEventListener("click", () => {
+      moreProjects.classList.toggle("hidden");
+
+      if (moreProjects.classList.contains("hidden")) {
+        showMoreBtn.childNodes[0].textContent = "Show more ";
+      } else {
+        showMoreBtn.childNodes[0].textContent = "Show less ";
+      }
+    });
+  }
+});
+
